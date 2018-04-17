@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B1F17852084908300BF622B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F17842084908300BF622B /* ProductCell.swift */; };
+		9B1F178720849DD900BF622B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F178620849DD800BF622B /* Common.swift */; };
+		9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30C04C206DF14500C49A8B /* AppDelegate.swift */; };
+		9B30C052206DF14500C49A8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C050206DF14500C49A8B /* Main.storyboard */; };
+		9B30C054206DF14500C49A8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C053206DF14500C49A8B /* Assets.xcassets */; };
+		9B30C057206DF14500C49A8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C055206DF14500C49A8B /* LaunchScreen.storyboard */; };
+		9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402B208305D30015C3C8 /* DataHelper.swift */; };
+		9B5B402E20831A800015C3C8 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402D20831A800015C3C8 /* TableViewModel.swift */; };
+		9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */; };
+		9BD6B4DC207DC36900E5A379 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD6B4DB207DC36900E5A379 /* Product.swift */; };
+		9BFF90AC207A335300E00EE6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF90AB207A335300E00EE6 /* TableViewController.swift */; };
+		9FB49CB5C2627AC9F56F7852 /* Pods_HalfPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4B2F25ADF5DB844190051 /* Pods_HalfPrice.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09E4B2F25ADF5DB844190051 /* Pods_HalfPrice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HalfPrice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85087C9AF712F502FCF3DADE /* Pods-HalfPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice.release.xcconfig"; sourceTree = "<group>"; };
+		9B1F17842084908300BF622B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		9B1F178620849DD800BF622B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		9B30C049206DF14500C49A8B /* HalfPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalfPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B30C04C206DF14500C49A8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B30C051206DF14500C49A8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B30C053206DF14500C49A8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B30C056206DF14500C49A8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9B30C058206DF14500C49A8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B5B402B208305D30015C3C8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		9B5B402D20831A800015C3C8 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9BD6B4DB207DC36900E5A379 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		9BFF90AB207A335300E00EE6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C555729F36DE4AD54ABAABBC /* Pods-HalfPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B30C046206DF14500C49A8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FB49CB5C2627AC9F56F7852 /* Pods_HalfPrice.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49A7D39DBD0589A499814F89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09E4B2F25ADF5DB844190051 /* Pods_HalfPrice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8DF2D5E793330BCF9B173EEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C555729F36DE4AD54ABAABBC /* Pods-HalfPrice.debug.xcconfig */,
+				85087C9AF712F502FCF3DADE /* Pods-HalfPrice.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B30C040206DF14500C49A8B = {
+			isa = PBXGroup;
+			children = (
+				9B30C04B206DF14500C49A8B /* HalfPrice */,
+				9B30C04A206DF14500C49A8B /* Products */,
+				8DF2D5E793330BCF9B173EEC /* Pods */,
+				49A7D39DBD0589A499814F89 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9B30C04A206DF14500C49A8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B30C049206DF14500C49A8B /* HalfPrice.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B30C04B206DF14500C49A8B /* HalfPrice */ = {
+			isa = PBXGroup;
+			children = (
+				9B30C04C206DF14500C49A8B /* AppDelegate.swift */,
+				9BFF90AB207A335300E00EE6 /* TableViewController.swift */,
+				9B5B402D20831A800015C3C8 /* TableViewModel.swift */,
+				9B1F17842084908300BF622B /* ProductCell.swift */,
+				9BD6B4DB207DC36900E5A379 /* Product.swift */,
+				9B5B402B208305D30015C3C8 /* DataHelper.swift */,
+				9B1F178620849DD800BF622B /* Common.swift */,
+				9B30C050206DF14500C49A8B /* Main.storyboard */,
+				9B30C053206DF14500C49A8B /* Assets.xcassets */,
+				9B30C055206DF14500C49A8B /* LaunchScreen.storyboard */,
+				9B30C058206DF14500C49A8B /* Info.plist */,
+				9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */,
+				9B30C05E206DF5B800C49A8B /* docs */,
+			);
+			path = HalfPrice;
+			sourceTree = "<group>";
+		};
+		9B30C05E206DF5B800C49A8B /* docs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B30C048206DF14500C49A8B /* HalfPrice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B30C05B206DF14500C49A8B /* Build configuration list for PBXNativeTarget "HalfPrice" */;
+			buildPhases = (
+				E9D750D3E013559051D500D2 /* [CP] Check Pods Manifest.lock */,
+				9B30C045206DF14500C49A8B /* Sources */,
+				9B30C046206DF14500C49A8B /* Frameworks */,
+				9B30C047206DF14500C49A8B /* Resources */,
+				408BF94615A785D4F79D6858 /* [CP] Embed Pods Frameworks */,
+				BAC28747F2A07DD37893BC3C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HalfPrice;
+			productName = HalfPrice;
+			productReference = 9B30C049206DF14500C49A8B /* HalfPrice.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B30C041206DF14500C49A8B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = queenahu;
+				TargetAttributes = {
+					9B30C048206DF14500C49A8B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9B30C044206DF14500C49A8B /* Build configuration list for PBXProject "HalfPrice" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9B30C040206DF14500C49A8B;
+			productRefGroup = 9B30C04A206DF14500C49A8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B30C048206DF14500C49A8B /* HalfPrice */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B30C047206DF14500C49A8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B30C057206DF14500C49A8B /* LaunchScreen.storyboard in Resources */,
+				9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */,
+				9B30C054206DF14500C49A8B /* Assets.xcassets in Resources */,
+				9B30C052206DF14500C49A8B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		408BF94615A785D4F79D6858 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAC28747F2A07DD37893BC3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D750D3E013559051D500D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HalfPrice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B30C045206DF14500C49A8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1F178720849DD900BF622B /* Common.swift in Sources */,
+				9BD6B4DC207DC36900E5A379 /* Product.swift in Sources */,
+				9BFF90AC207A335300E00EE6 /* TableViewController.swift in Sources */,
+				9B5B402E20831A800015C3C8 /* TableViewModel.swift in Sources */,
+				9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */,
+				9B1F17852084908300BF622B /* ProductCell.swift in Sources */,
+				9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9B30C050206DF14500C49A8B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B30C051206DF14500C49A8B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9B30C055206DF14500C49A8B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B30C056206DF14500C49A8B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B30C059206DF14500C49A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9B30C05A206DF14500C49A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B30C05C206DF14500C49A8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C555729F36DE4AD54ABAABBC /* Pods-HalfPrice.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 383HSRD9U3;
+				INFOPLIST_FILE = HalfPrice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.queenahu.HalfPrice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B30C05D206DF14500C49A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85087C9AF712F502FCF3DADE /* Pods-HalfPrice.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 383HSRD9U3;
+				INFOPLIST_FILE = HalfPrice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.queenahu.HalfPrice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B30C044206DF14500C49A8B /* Build configuration list for PBXProject "HalfPrice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B30C059206DF14500C49A8B /* Debug */,
+				9B30C05A206DF14500C49A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B30C05B206DF14500C49A8B /* Build configuration list for PBXNativeTarget "HalfPrice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B30C05C206DF14500C49A8B /* Debug */,
+				9B30C05D206DF14500C49A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B30C041206DF14500C49A8B /* Project object */;
+}
