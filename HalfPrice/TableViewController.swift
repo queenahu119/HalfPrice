@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SnapKit
 
 class TableViewController: UITableViewController {
 
@@ -18,15 +19,42 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.title = "Half Price"
+        navigationController?.navigationBar.isTranslucent = false
+
+        edgesForExtendedLayout = []
+        
         viewModel.reloadTableViewClosure = { [weak self] in
             self?.tableView.reloadData()
         }
 
         viewModel.initFetch()
+
+        setupMenuBar()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    let menuBar: MenuBar = {
+        let mb = MenuBar()
+        return mb
+    }()
+
+    private func setupMenuBar() {
+//        view.addSubview(menuBar)
+        view.bringSubview(toFront: menuBar)
+
+        menuBar.translatesAutoresizingMaskIntoConstraints = false
+        menuBar.snp.makeConstraints { (make) in
+//            make.left.equalTo(view.snp.left)
+//            make.right.equalTo(view.snp.right)
+//            make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+            make.leading.trailing.top.equalToSuperview()
+            make.height.equalTo(50)
+        }
+
     }
 
     // MARK: - Table view data source

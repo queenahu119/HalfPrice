@@ -16,6 +16,8 @@
 		9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402B208305D30015C3C8 /* DataHelper.swift */; };
 		9B5B402E20831A800015C3C8 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402D20831A800015C3C8 /* TableViewModel.swift */; };
 		9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */; };
+		9BC4CC912085C04900FD5A3B /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4CC902085C04900FD5A3B /* MenuBar.swift */; };
+		9BC4CC93208606E100FD5A3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC4CC92208606E100FD5A3B /* ViewController.swift */; };
 		9BD6B4DC207DC36900E5A379 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD6B4DB207DC36900E5A379 /* Product.swift */; };
 		9BFF90AC207A335300E00EE6 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF90AB207A335300E00EE6 /* TableViewController.swift */; };
 		9FB49CB5C2627AC9F56F7852 /* Pods_HalfPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4B2F25ADF5DB844190051 /* Pods_HalfPrice.framework */; };
@@ -35,6 +37,8 @@
 		9B5B402B208305D30015C3C8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		9B5B402D20831A800015C3C8 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9BC4CC902085C04900FD5A3B /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		9BC4CC92208606E100FD5A3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9BD6B4DB207DC36900E5A379 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9BFF90AB207A335300E00EE6 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C555729F36DE4AD54ABAABBC /* Pods-HalfPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,7 +96,9 @@
 			children = (
 				9B30C04C206DF14500C49A8B /* AppDelegate.swift */,
 				9BFF90AB207A335300E00EE6 /* TableViewController.swift */,
+				9BC4CC92208606E100FD5A3B /* ViewController.swift */,
 				9B5B402D20831A800015C3C8 /* TableViewModel.swift */,
+				9BC4CC902085C04900FD5A3B /* MenuBar.swift */,
 				9B1F17842084908300BF622B /* ProductCell.swift */,
 				9BD6B4DB207DC36900E5A379 /* Product.swift */,
 				9B5B402B208305D30015C3C8 /* DataHelper.swift */,
@@ -256,6 +262,8 @@
 			files = (
 				9B1F178720849DD900BF622B /* Common.swift in Sources */,
 				9BD6B4DC207DC36900E5A379 /* Product.swift in Sources */,
+				9BC4CC912085C04900FD5A3B /* MenuBar.swift in Sources */,
+				9BC4CC93208606E100FD5A3B /* ViewController.swift in Sources */,
 				9BFF90AC207A335300E00EE6 /* TableViewController.swift in Sources */,
 				9B5B402E20831A800015C3C8 /* TableViewModel.swift in Sources */,
 				9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */,
