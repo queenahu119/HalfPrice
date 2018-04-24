@@ -33,8 +33,7 @@ struct Product: Codable {
     let thumbnail_url:String?
     let was_price:Float
 
-    init(jsonDictionary: [String: AnyObject])
-    {
+    init(jsonDictionary: [String: AnyObject]) {
         let value = jsonDictionary
 
         let name = value["name"] as? String

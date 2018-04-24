@@ -133,6 +133,7 @@
 				9B30C047206DF14500C49A8B /* Resources */,
 				408BF94615A785D4F79D6858 /* [CP] Embed Pods Frameworks */,
 				BAC28747F2A07DD37893BC3C /* [CP] Copy Pods Resources */,
+				9BDC3B8B208D653F00D6BE41 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -219,6 +220,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9BDC3B8B208D653F00D6BE41 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelseecho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		BAC28747F2A07DD37893BC3C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

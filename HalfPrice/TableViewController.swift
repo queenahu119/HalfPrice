@@ -23,7 +23,7 @@ class TableViewController: UITableViewController {
         navigationController?.navigationBar.isTranslucent = false
 
         edgesForExtendedLayout = []
-        
+
         viewModel.reloadTableViewClosure = { [weak self] in
             self?.tableView.reloadData()
         }
@@ -98,6 +98,5 @@ class TableViewController: UITableViewController {
 
         return cell
     }
-
 
 }

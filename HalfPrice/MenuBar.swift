@@ -66,12 +66,9 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return 0
     }
 
-
 }
 
-
 class MenuCell: UICollectionViewCell {
-
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -110,5 +107,4 @@ class MenuCell: UICollectionViewCell {
         }
     }
 
-    
 }

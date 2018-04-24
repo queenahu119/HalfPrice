@@ -17,14 +17,14 @@ class TableViewModel: NSObject {
         self.dataHelper = dataHelper
     }
 
-    //MARK: - callback
-    var reloadTableViewClosure: (()->())?
-    var updateLoadingStatus: (()->())?
+    // MARK: - callback
+    var reloadTableViewClosure: (()->Void)?
+    var updateLoadingStatus: (()->Void)?
 
     var ref: DatabaseReference!
     var messages: [Product] = []
     fileprivate var _refHandle: DatabaseHandle?
-    
+
     private var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
         didSet {
             self.reloadTableViewClosure?()
@@ -64,7 +64,6 @@ class TableViewModel: NSObject {
             strongSelf.messages.append(product)
 
             let description = "\(product.package_size!) \(product.package_price!)"
-
 
             let cell = ProductCellViewModel(titleText: product.name!, brandText:product.brand , descText: description, imageUrl: product.thumbnail_url, price: product.price, pastPrice:product.was_price, isLike:false)
 

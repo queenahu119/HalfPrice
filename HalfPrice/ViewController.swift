@@ -28,15 +28,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
-
         viewModel.reloadTableViewClosure = { [weak self] in
             self?.tableView.reloadData()
         }
 
         viewModel.initFetch()
 
-        tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
-        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
 
         setupMenuBar()
         setupNavBarButtons()
@@ -71,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-    private func setupNavBarButtons(){
+    private func setupNavBarButtons() {
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(onSearch))
         let bookmarksButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(onSearch))
         navigationItem.rightBarButtonItems = [searchButton, bookmarksButton]
@@ -100,11 +99,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let product = viewModel.getCellViewModel(at: indexPath)
 
         cell.product = product
-        
+
         return cell
     }
 
-    //MARK: - Action
+    // MARK: - Action
     @objc func onSearch() {
 
     }

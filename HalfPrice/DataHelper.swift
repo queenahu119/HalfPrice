@@ -9,8 +9,6 @@
 import Foundation
 import FirebaseDatabase
 
-
 class DataHelper: NSObject {
 
-    
 }

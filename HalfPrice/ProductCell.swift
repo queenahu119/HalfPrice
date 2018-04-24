@@ -70,7 +70,7 @@ class ProductCell: UITableViewCell {
     }
 
     func setupUI() {
-        let padding = UIEdgeInsetsMake(20, 20, -20, -20)
+        let padding = UIEdgeInsets(top: 20, left: 20, bottom: -20, right: -20)
 
         productImageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.snp.left).offset(padding.left)
@@ -111,6 +111,5 @@ class ProductCell: UITableViewCell {
 
         likeButton.setImage(UIImage(named: "Button_like_h"), for: .normal)
     }
-
 
 }
