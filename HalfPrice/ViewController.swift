@@ -28,9 +28,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(onSearch))
-        let bookmarksButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(onSearch))
-        navigationItem.rightBarButtonItems = [searchButton, bookmarksButton]
 
         viewModel.reloadTableViewClosure = { [weak self] in
             self?.tableView.reloadData()
@@ -38,7 +35,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         viewModel.initFetch()
 
+        tableView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        tableView.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
+
         setupMenuBar()
+        setupNavBarButtons()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +71,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
+    private func setupNavBarButtons(){
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(onSearch))
+        let bookmarksButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(onSearch))
+        navigationItem.rightBarButtonItems = [searchButton, bookmarksButton]
+
+    }
+
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,29 +94,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Dequeue cell
+
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ProductCellId", for: indexPath) as! ProductCell
 
         let product = viewModel.getCellViewModel(at: indexPath)
 
-        cell.labelName.text = "Clover Photos" //product.titleText
-        cell.labelBrand.text = "sydney"//product.brandText
-
-        cell.labelDescription.text = "photography company" //product.descText
-        cell.productImageView.imageFromServerURL(url: product.imageUrl)
-
-        let attribute = [ NSAttributedStringKey.foregroundColor: UIColor.red , NSAttributedStringKey.font: UIFont.systemFont(ofSize: 28)]
-        let price = product.price.format(".2")
-        let attrString = NSMutableAttributedString(string: "$\(price) ", attributes: attribute)
-
-        if let wasPrice = product.pastPrice {
-            let wasPriceString = wasPrice.format(".2")
-            let attrPastPriceString = NSAttributedString(string: "was $\(wasPriceString)")
-            attrString.append(attrPastPriceString)
-        }
-
-        cell.labelPrice.attributedText = attrString
-
+        cell.product = product
+        
         return cell
     }
 

@@ -66,7 +66,7 @@ class TableViewModel: NSObject {
             let description = "\(product.package_size!) \(product.package_price!)"
 
 
-            let cell = ProductCellViewModel(titleText: product.name!, brandText:product.brand! , descText: description, imageUrl: product.thumbnail_url!, price: product.price, pastPrice:product.was_price, isLike:false)
+            let cell = ProductCellViewModel(titleText: product.name!, brandText:product.brand , descText: description, imageUrl: product.thumbnail_url, price: product.price, pastPrice:product.was_price, isLike:false)
 
             strongSelf.cellViewModels.append(cell)
 
@@ -77,13 +77,13 @@ class TableViewModel: NSObject {
 }
 
 struct ProductCellViewModel {
-    let titleText: String
-    let brandText: String
+    let titleText: String?
+    let brandText: String?
 
-    let descText: String
-    let imageUrl: String
-    let price: Float
+    let descText: String?
+    let imageUrl: String?
+    let price: Float?
     let pastPrice: Float?
-    let isLike: Bool
+    let isLike: Bool?
 
 }

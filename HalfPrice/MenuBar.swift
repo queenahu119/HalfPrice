@@ -76,6 +76,7 @@ class MenuCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.textColor = UIColor.red
         return label
     }()
 

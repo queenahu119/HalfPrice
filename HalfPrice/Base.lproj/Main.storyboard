@@ -67,7 +67,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageView" destination="aXg-pF-yRX" id="QPn-bM-5Lc"/>
                                     <outlet property="labelBrand" destination="HAn-xw-Yhq" id="aQM-Vo-8Hg"/>
                                     <outlet property="labelDescription" destination="2ZJ-OL-weK" id="A3Q-eJ-bxt"/>
                                     <outlet property="labelName" destination="gfq-pk-3Ju" id="q7W-Yx-ztu"/>
@@ -150,11 +149,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageView" destination="Yhz-DQ-vCH" id="Q4u-XD-7nX"/>
                                             <outlet property="labelBrand" destination="63t-43-vKt" id="pc5-W0-awn"/>
                                             <outlet property="labelDescription" destination="Nfv-O2-5HY" id="AAD-zC-Ed2"/>
                                             <outlet property="labelName" destination="DXz-Rf-ezh" id="EGm-gj-Adt"/>
                                             <outlet property="labelPrice" destination="2tN-EY-ThR" id="1uJ-GK-fjD"/>
+                                            <outlet property="likeButton" destination="zMf-5i-I96" id="34h-Zz-4q5"/>
                                             <outlet property="productImageView" destination="Yhz-DQ-vCH" id="3c9-oD-Sgc"/>
                                         </connections>
                                     </tableViewCell>

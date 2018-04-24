@@ -81,20 +81,20 @@ class TableViewController: UITableViewController {
         cell.labelName.text = product.titleText
         cell.labelBrand.text = product.brandText
 
-        cell.labelDescription.text = product.descText
-        cell.productImageView.imageFromServerURL(url: product.imageUrl)
-
-        let attribute = [ NSAttributedStringKey.foregroundColor: UIColor.red , NSAttributedStringKey.font: UIFont.systemFont(ofSize: 28)]
-        let price = product.price.format(".2")
-        let attrString = NSMutableAttributedString(string: "$\(price) ", attributes: attribute)
-
-        if let wasPrice = product.pastPrice {
-            let wasPriceString = wasPrice.format(".2")
-            let attrPastPriceString = NSAttributedString(string: "was $\(wasPriceString)")
-            attrString.append(attrPastPriceString)
-        }
-
-        cell.labelPrice.attributedText = attrString
+//        cell.labelDescription.text = product.descText
+//        cell.productImageView.imageFromServerURL(url: product.imageUrl)
+//
+//        let attribute = [ NSAttributedStringKey.foregroundColor: UIColor.red , NSAttributedStringKey.font: UIFont.systemFont(ofSize: 28)]
+//        let price = product.price.format(".2")
+//        let attrString = NSMutableAttributedString(string: "$\(price) ", attributes: attribute)
+//
+//        if let wasPrice = product.pastPrice {
+//            let wasPriceString = wasPrice.format(".2")
+//            let attrPastPriceString = NSAttributedString(string: "was $\(wasPriceString)")
+//            attrString.append(attrPastPriceString)
+//        }
+//
+//        cell.labelPrice.attributedText = attrString
 
         return cell
     }
