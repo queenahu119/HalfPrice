@@ -38,8 +38,8 @@ class TableViewController: UITableViewController {
     }
 
     let menuBar: MenuBar = {
-        let mb = MenuBar()
-        return mb
+        let menuBar = MenuBar()
+        return menuBar
     }()
 
     private func setupMenuBar() {

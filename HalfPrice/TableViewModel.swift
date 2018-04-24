@@ -18,10 +18,10 @@ class TableViewModel: NSObject {
     }
 
     // MARK: - callback
-    var reloadTableViewClosure: (()->Void)?
-    var updateLoadingStatus: (()->Void)?
+    var reloadTableViewClosure: (() -> Void)?
+    var updateLoadingStatus: (() -> Void)?
 
-    var ref: DatabaseReference!
+    var reference: DatabaseReference!
     var messages: [Product] = []
     fileprivate var _refHandle: DatabaseHandle?
 
@@ -50,9 +50,9 @@ class TableViewModel: NSObject {
     }
 
     func configureDatabase() {
-        ref = Database.database().reference()
+        reference = Database.database().reference()
 
-        _refHandle = self.ref.observe(.childAdded, with: { [weak self] (snapshot) in
+        _refHandle = self.reference.observe(.childAdded, with: { [weak self] (snapshot) in
             guard let strongSelf = self else { return }
             guard let value = snapshot.value as? [String: AnyObject] else {
                 print("Firebase's data have wrong format.")
@@ -63,9 +63,9 @@ class TableViewModel: NSObject {
 
             strongSelf.messages.append(product)
 
-            let description = "\(product.package_size!) \(product.package_price!)"
+            let description = "\(product.packageSize!) \(product.packagePrice!)"
 
-            let cell = ProductCellViewModel(titleText: product.name!, brandText:product.brand , descText: description, imageUrl: product.thumbnail_url, price: product.price, pastPrice:product.was_price, isLike:false)
+            let cell = ProductCellViewModel(titleText: product.name!, brandText:product.brand , descText: description, imageUrl: product.thumbnailUrl, price: product.price, pastPrice:product.wasPrice, isLike:false)
 
             strongSelf.cellViewModels.append(cell)
 

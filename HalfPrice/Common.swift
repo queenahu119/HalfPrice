@@ -12,9 +12,9 @@ import Alamofire
 import AlamofireImage
 
 extension UIImageView {
-    func imageFromServerURL(url: String){
-        
-        Alamofire.request(url).responseImage { response in
+    func imageFromServerURL(urlString: String) {
+
+        Alamofire.request(urlString).responseImage { response in
 
             if let image = response.result.value {
                 self.image = image
@@ -24,7 +24,7 @@ extension UIImageView {
 }
 
 extension Float {
-    func format(_ f: String) -> String {
-        return String(format: "%\(f)f", self)
+    func format(_ formatString: String) -> String {
+        return String(format: "%\(formatString)f", self)
     }
 }

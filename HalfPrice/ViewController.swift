@@ -46,8 +46,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     let menuBar: MenuBar = {
-        let mb = MenuBar()
-        return mb
+        let menuBar = MenuBar()
+        return menuBar
     }()
 
     private func setupMenuBar() {

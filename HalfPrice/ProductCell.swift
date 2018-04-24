@@ -25,7 +25,7 @@ class ProductCell: UITableViewCell {
             labelDescription.text = product?.descText
 
             if let imageUrl = product?.imageUrl {
-                productImageView.imageFromServerURL(url: imageUrl)
+                productImageView.imageFromServerURL(urlString: imageUrl)
             }
 
             if let price = product?.price {
