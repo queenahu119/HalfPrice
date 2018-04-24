@@ -65,7 +65,13 @@ class TableViewModel: NSObject {
 
             let description = "\(product.packageSize!) \(product.packagePrice!)"
 
-            let cell = ProductCellViewModel(titleText: product.name!, brandText:product.brand , descText: description, imageUrl: product.thumbnailUrl, price: product.price, pastPrice:product.wasPrice, isLike:false)
+            let cell = ProductCellViewModel(titleText: product.name,
+                                            brandText:product.brand ,
+                                            descText: description,
+                                            imageUrl: product.thumbnailUrl,
+                                            price: product.price,
+                                            pastPrice:product.wasPrice,
+                                            isLike:false)
 
             strongSelf.cellViewModels.append(cell)
 

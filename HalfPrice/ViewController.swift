@@ -71,8 +71,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     private func setupNavBarButtons() {
-        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(onSearch))
-        let bookmarksButton = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(onSearch))
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search,
+                                           target: self, action: #selector(onSearch))
+        let bookmarksButton = UIBarButtonItem(barButtonSystemItem: .bookmarks,
+                                              target: self, action: #selector(onSearch))
         navigationItem.rightBarButtonItems = [searchButton, bookmarksButton]
 
     }
@@ -94,7 +96,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "ProductCellId", for: indexPath) as! ProductCell
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ProductCellId",
+                                                            for: indexPath) as? ProductCell else {
+            fatalError("Dequeueing tableviewCell failed")
+        }
+
+//        let cell: ProductCell = self.tableView.dequeueReusableCell(withIdentifier: "ProductCellId",
+//                                                      for: indexPath) as! ProductCell
 
         let product = viewModel.getCellViewModel(at: indexPath)
 

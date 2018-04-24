@@ -11,7 +11,8 @@ import SnapKit
 
 let cellWidth:CGFloat = 200.0
 
-class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
+                UICollectionViewDelegateFlowLayout {
 
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -24,7 +25,8 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }()
 
     let cellId = "cellId"
-    let tagNames = ["Hot", "Frozen", "Drinks", "Household", "Beauty", "Living", "International", "Dairy", "Bakery", "Meat", "Stationery", "Pet", "Alcohol"]
+    let tagNames = ["Hot", "Frozen", "Drinks", "Household", "Beauty", "Living",
+                    "International", "Dairy", "Bakery", "Meat", "Stationery", "Pet", "Alcohol"]
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,19 +52,26 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         return tagNames.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCell
-
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId,
+                                                            for: indexPath) as? MenuCell else {
+            fatalError("Dequeueing collectionViewCell failed")
+        }
         cell.titleLabel.text = tagNames[indexPath.row]
 
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: frame.height)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 

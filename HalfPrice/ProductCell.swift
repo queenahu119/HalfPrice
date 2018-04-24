@@ -29,11 +29,14 @@ class ProductCell: UITableViewCell {
             }
 
             if let price = product?.price {
-                let attribute = [ NSAttributedStringKey.foregroundColor: UIColor.red , NSAttributedStringKey.font: UIFont.systemFont(ofSize: 28)]
-                let attrString = NSMutableAttributedString(string: "$\(price.format(".2")) ", attributes: attribute)
+                let attribute = [ NSAttributedStringKey.foregroundColor: UIColor.red,
+                                  NSAttributedStringKey.font: UIFont.systemFont(ofSize: 28)]
+                let formatString = price.format(".2")
+                let attrString = NSMutableAttributedString(string: "$\(formatString) ", attributes: attribute)
 
                 if let wasPrice = product?.pastPrice {
-                    let attrPastPriceString = NSAttributedString(string: "was $\(wasPrice.format(".2"))")
+                    let formatString = wasPrice.format(".2")
+                    let attrPastPriceString = NSAttributedString(string: "was $\(formatString)")
                     attrString.append(attrPastPriceString)
                 }
 
@@ -41,18 +44,25 @@ class ProductCell: UITableViewCell {
             }
 
             // Adjust text's height
-            let size = CGSize(width: frame.width - 20*2 - 8 - 150, height: 1000)
-            let option = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-            let estimateRect = NSString(string: labelName.text!).boundingRect(with: size, options: option, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14)], context: nil)
-            if estimateRect.size.height > 20 {
-                labelName.snp.updateConstraints { (make) in
-                    make.height.equalTo(44)
-                }
-            } else {
-                labelName.snp.updateConstraints { (make) in
-                    make.height.equalTo(20)
+            if let text = labelName.text {
+                let size = CGSize(width: frame.width - 20*2 - 8 - 150, height: 1000)
+                let option = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+                let attributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 14)]
+                let estimateRect = NSString(string: text).boundingRect(with: size,
+                                                                       options: option,
+                                                                       attributes:attributes,
+                                                                       context: nil)
+                if estimateRect.size.height > 20 {
+                    labelName.snp.updateConstraints { (make) in
+                        make.height.equalTo(44)
+                    }
+                } else {
+                    labelName.snp.updateConstraints { (make) in
+                        make.height.equalTo(20)
+                    }
                 }
             }
+
         }
     }
 
