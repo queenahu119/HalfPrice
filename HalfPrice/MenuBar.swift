@@ -9,7 +9,23 @@
 import UIKit
 import SnapKit
 
-let cellWidth:CGFloat = 200.0
+let cellWidth:CGFloat = 100.0
+
+enum CategoryName: String {
+    case hot = "Hot"
+    case frozen = "Frozen"
+    case drinks = "Drinks"
+    case household = "Household"
+    case beauty = "Beauty"
+    case living = "Living"
+    case international = "International"
+    case dairy = "Dairy"
+    case bakery = "Bakery"
+    case meat = "Meat"
+    case stationery = "Stationery"
+    case pet = "Pet"
+    case alcohol = "Alcohol"
+}
 
 class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
                 UICollectionViewDelegateFlowLayout {
@@ -17,6 +33,7 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.blue
         collectionView.dataSource = self
@@ -25,8 +42,10 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     }()
 
     let cellId = "cellId"
-    let tagNames = ["Hot", "Frozen", "Drinks", "Household", "Beauty", "Living",
-                    "International", "Dairy", "Bakery", "Meat", "Stationery", "Pet", "Alcohol"]
+    let tagNames: [CategoryName] = [.hot, .frozen, .drinks, .household, .beauty, .living, .international, .dairy, .bakery, .meat, .stationery, .pet, .alcohol]
+
+    var homeController: ViewController?
+    var menuIndex = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,13 +58,43 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
             make.edges.equalTo(self)
         }
 
-        let selectedIndexPath = IndexPath(item: 0, section: 0)
-
+        let selectedIndexPath = IndexPath(item: menuIndex, section: 0)
         collectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .bottom)
+
+//        collectionView.showsHorizontalScrollIndicator = false
+
+        setupHorizontalBar()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    var horizontalBarLeftAnchorConstraint: Constraint?
+
+    private func setupHorizontalBar() {
+        let horizontalBar = UIView()
+        horizontalBar.backgroundColor = UIColor.red
+        horizontalBar.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(horizontalBar)
+
+        horizontalBar.snp.makeConstraints { (make) in
+            horizontalBarLeftAnchorConstraint = make.left.equalTo(self.snp.left).offset(0).constraint
+            make.bottom.equalTo(self.snp.bottom)
+            make.width.equalTo(cellWidth)
+            make.height.equalTo(4)
+        }
+    }
+
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        let offset = cellWidth * CGFloat(menuIndex)
+
+        let frame = offset - collectionView.contentOffset.x
+
+        horizontalBarLeftAnchorConstraint?.update(offset: frame)
+
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,21 +107,39 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
                                                             for: indexPath) as? MenuCell else {
             fatalError("Dequeueing collectionViewCell failed")
         }
-        cell.titleLabel.text = tagNames[indexPath.row]
 
+        let colors: [UIColor] = [UIColor.purple, UIColor.blue, UIColor.green, UIColor.darkGray]
+        cell.backgroundColor = colors[indexPath.row % 4]
+
+        cell.titleLabel.text = "\(indexPath.row)\(tagNames[indexPath.row].rawValue)"
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: frame.height)
+        return CGSize(width: cellWidth, height: frame.height)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+//        let offset = collectionView.contentOffset
+//        let frameX = CGFloat(menuIndex) * cellWidth - offset.x
+//        horizontalBarLeftAnchorConstraint?.update(offset: frameX)
+//
+//        
+//        UIView.animate(withDuration: 0.75, animations: {
+//            self.layoutIfNeeded()
+//        }, completion: nil)
+
+        homeController?.scrollToMenuIndex(menuIndex: indexPath.item)
+
     }
 
 }
@@ -90,7 +157,6 @@ class MenuCell: UICollectionViewCell {
         super.init(frame: frame)
 
         setupViews()
-
     }
 
     override var isHighlighted: Bool {
