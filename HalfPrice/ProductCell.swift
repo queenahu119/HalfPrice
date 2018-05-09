@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class ProductCell: UITableViewCell {
+class ProductCell: UICollectionViewCell {
 
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var labelBrand: UILabel!
@@ -70,13 +70,8 @@ class ProductCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
 
+        backgroundColor = UIColor.white
         setupUI()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     func setupUI() {

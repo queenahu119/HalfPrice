@@ -31,6 +31,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - SnapKit (4.0.0)
+  - XLPagerTabStrip (8.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - SnapKit (~> 4.0.0)
+  - XLPagerTabStrip (~> 8.0)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -51,7 +53,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: aa4e5b262cda0f99e1e3b67d5c25bc444a065fd6
+PODFILE CHECKSUM: b2292ff5fde8a53934b49dd033f75ac2baca6e0d
 
 COCOAPODS: 1.4.0.beta.2
