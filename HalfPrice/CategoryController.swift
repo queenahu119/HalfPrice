@@ -13,8 +13,8 @@ private let reuseIdentifier = "ProduceCell"
 
 class CategoryController: UICollectionViewController, UICollectionViewDelegateFlowLayout, IndicatorInfoProvider {
 
-    lazy var viewModel: TableViewModel = {
-        return TableViewModel()
+    lazy var viewModel: CategoryViewModel = {
+        return CategoryViewModel()
     }()
 
     var itemInfo = IndicatorInfo(title: "View")
@@ -35,10 +35,14 @@ class CategoryController: UICollectionViewController, UICollectionViewDelegateFl
         let nib = UINib(nibName: "ProduceCell", bundle: Bundle.main)
         collectionView?.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
 
-        self.collectionView?.backgroundColor = UIColor(red: 15/255.0, green: 16/255.0, blue: 16/255.0, alpha: 1.0)
+        self.collectionView?.backgroundColor = UIColor.white
 
-        viewModel.reloadTableViewClosure = { [weak self] in
+        viewModel.reloadViewClosure = { [weak self] in
             self?.collectionView?.reloadData()
+        }
+
+        if let title = itemInfo.title {
+            viewModel.currentCategory = title
         }
 
         viewModel.initFetch()
@@ -70,17 +74,15 @@ class CategoryController: UICollectionViewController, UICollectionViewDelegateFl
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ProductCell else {
-            fatalError("Dequeueing collectionViewCell failed")
+            fatalError("Dequeueing ProductCell failed")
         }
 
         let product = viewModel.getCellViewModel(at: indexPath)
         cell.product = product
-        
         return cell
     }
 
     // MARK: - IndicatorInfoProvider
-
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }

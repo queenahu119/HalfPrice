@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		9B1F17852084908300BF622B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F17842084908300BF622B /* ProductCell.swift */; };
 		9B1F178720849DD900BF622B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F178620849DD800BF622B /* Common.swift */; };
+		9B2787E620A574D1000A3630 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2787E520A574D1000A3630 /* CategoryViewModel.swift */; };
 		9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30C04C206DF14500C49A8B /* AppDelegate.swift */; };
 		9B30C052206DF14500C49A8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C050206DF14500C49A8B /* Main.storyboard */; };
 		9B30C054206DF14500C49A8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C053206DF14500C49A8B /* Assets.xcassets */; };
 		9B30C057206DF14500C49A8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C055206DF14500C49A8B /* LaunchScreen.storyboard */; };
 		9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402B208305D30015C3C8 /* DataHelper.swift */; };
-		9B5B402E20831A800015C3C8 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402D20831A800015C3C8 /* TableViewModel.swift */; };
 		9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */; };
 		9B9F1A8520A2C234007DD66E /* ProduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */; };
 		9BD6B4DC207DC36900E5A379 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD6B4DB207DC36900E5A379 /* Product.swift */; };
@@ -28,6 +28,7 @@
 		85087C9AF712F502FCF3DADE /* Pods-HalfPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice.release.xcconfig"; sourceTree = "<group>"; };
 		9B1F17842084908300BF622B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		9B1F178620849DD800BF622B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		9B2787E520A574D1000A3630 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		9B30C049206DF14500C49A8B /* HalfPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalfPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B30C04C206DF14500C49A8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B30C051206DF14500C49A8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		9B30C056206DF14500C49A8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B30C058206DF14500C49A8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B5B402B208305D30015C3C8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
-		9B5B402D20831A800015C3C8 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProduceCell.xib; sourceTree = "<group>"; };
 		9BD6B4DB207DC36900E5A379 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 			children = (
 				9B30C04C206DF14500C49A8B /* AppDelegate.swift */,
 				9BFF77C920A01B99009B9AEC /* HomeController.swift */,
-				9B5B402D20831A800015C3C8 /* TableViewModel.swift */,
 				9BFF77CB20A01E80009B9AEC /* CategoryController.swift */,
+				9B2787E520A574D1000A3630 /* CategoryViewModel.swift */,
 				9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */,
 				9B1F17842084908300BF622B /* ProductCell.swift */,
 				9BD6B4DB207DC36900E5A379 /* Product.swift */,
@@ -278,10 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B1F178720849DD900BF622B /* Common.swift in Sources */,
+				9B2787E620A574D1000A3630 /* CategoryViewModel.swift in Sources */,
 				9BD6B4DC207DC36900E5A379 /* Product.swift in Sources */,
 				9BFF77CA20A01B99009B9AEC /* HomeController.swift in Sources */,
 				9BFF77CC20A01E80009B9AEC /* CategoryController.swift in Sources */,
-				9B5B402E20831A800015C3C8 /* TableViewModel.swift in Sources */,
 				9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */,
 				9B1F17852084908300BF622B /* ProductCell.swift in Sources */,
 				9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */,

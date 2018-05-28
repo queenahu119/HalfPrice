@@ -27,7 +27,7 @@ enum CategoryName: String {
 
 class HomeController: ButtonBarPagerTabStripViewController {
 
-    let tagNames: [CategoryName] = [.hot, .frozen, .drinks, .household, .beauty, .living, .international, .dairy, .bakery, .meat, .stationery, .pet, .alcohol]
+    static let tagNames: [CategoryName] = [.hot, .frozen, .drinks, .household, .beauty, .living, .international, .dairy, .bakery, .meat, .stationery, .pet, .alcohol]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,6 @@ class HomeController: ButtonBarPagerTabStripViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     private func setupNavBarButtons() {
@@ -65,7 +64,7 @@ class HomeController: ButtonBarPagerTabStripViewController {
         let layout = UICollectionViewFlowLayout()
         var childViewControllers: [CategoryController]? = []
 
-        for item in tagNames {
+        for item in HomeController.tagNames {
             let title = IndicatorInfo(title: item.rawValue)
             let child = CategoryController(layout: layout, itemInfo: title)
             childViewControllers?.append(child)

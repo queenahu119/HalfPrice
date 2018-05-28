@@ -11,4 +11,30 @@ import FirebaseDatabase
 
 class DataHelper: NSObject {
 
+    fileprivate var reference: DatabaseReference!
+    fileprivate var products: [Product] = []
+    fileprivate var categorys: [String] = []
+    fileprivate var _refHandle: DatabaseHandle?
+
+    func fetchDataByCategory(_ category: String, completion: @escaping (_ collection: [Product]?) -> Void) {
+        reference = Database.database().reference()
+
+        _refHandle = self.reference.observe(.childAdded, with: { (snapshot) in
+            guard let value = snapshot.value as? [String: AnyObject] else {
+                print("Firebase's data have wrong format.")
+                return
+            }
+
+            var collection: [Product] = []
+            let key = category.lowercased()
+            let categoryPath = value["key_in_category_list"] as? String ?? ""
+
+            if (categoryPath.contains(key)) {
+                let product = Product(jsonDictionary: value)
+                collection.append(product)
+            }
+
+            completion(collection)
+        })
+    }
 }
