@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import RealmSwift
+
+var uiRealm: Realm?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         FirebaseApp.configure()
+
+        do {
+            uiRealm = try Realm()
+        } catch let error as NSError {
+            print("Init Failed: ", error)
+        }
+
         return true
     }
 

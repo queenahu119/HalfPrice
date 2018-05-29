@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
+import RealmSwift
 
 class DataHelper: NSObject {
 
@@ -30,11 +31,46 @@ class DataHelper: NSObject {
             let categoryPath = value["key_in_category_list"] as? String ?? ""
 
             if (categoryPath.contains(key)) {
-                let product = Product(jsonDictionary: value)
+                let product = Product()
+                product.configure(jsonDictionary: value)
                 collection.append(product)
+
+                try! uiRealm?.write {
+                    uiRealm?.add(product)
+                }
             }
 
             completion(collection)
+        })
+    }
+
+    func fetchDataToRealm(completion: @escaping () -> Void) {
+        reference = Database.database().reference()
+
+        _refHandle = self.reference.observe(.childAdded, with: { (snapshot) in
+            guard let value = snapshot.value as? [String: AnyObject] else {
+                print("Firebase's data have wrong format.")
+                return
+            }
+
+            let product = Product()
+            product.configure(jsonDictionary: value)
+            guard let id = product.id else {
+                return
+            }
+
+            let predicate = NSPredicate(format: "id = %@", id)
+            guard let products = uiRealm?.objects(Product.self).filter(predicate) else {
+                return
+            }
+
+            if (products.isEmpty) {
+                try! uiRealm?.write {
+                    uiRealm?.add(product)
+                }
+            }
+
+            completion()
         })
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class CategoryViewModel: NSObject {
 
@@ -21,98 +22,66 @@ class CategoryViewModel: NSObject {
     // MARK: - callback
     var reloadViewClosure: (() -> Void)?
 
-    private var cellViewModels: [String: [ProductCellViewModel]] = [String: [ProductCellViewModel]]() {
+    private var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
         didSet {
             self.reloadViewClosure?()
         }
     }
 
     var numberOfCells: Int {
-        if let currentCategory = currentCategory, let result = cellViewModels[currentCategory] {
-            return result.count
+        if currentCategory != nil {
+            return cellViewModels.count
         }
         return 0
     }
 
     func getCellViewModel( at indexPath: IndexPath) -> ProductCellViewModel? {
-        guard let currentCategory = currentCategory,
-            let items = cellViewModels[currentCategory] else {
+        guard currentCategory != nil else {
             return nil
         }
 
-        return items[indexPath.row]
-    }
-
-    func initFetch(tagNames: [CategoryName]) {
-        fetchAllProducts(tagNames)
+        return cellViewModels[indexPath.row]
     }
 
     func initFetch() {
-
         guard let currentCategory = currentCategory else {
             return
         }
 
-        fetchProducts(currentCategory)
+        self.cellViewModels = [ProductCellViewModel]()
+        if let products = uiRealm?.objects(Product.self) {
+            if (products.isEmpty) {
+                fetchProducts(currentCategory)
+            }
+        }
+
+        addToViewModel(category: currentCategory)
     }
 
-    fileprivate func fetchProducts(_ name: String) {
-        let category = name
+    fileprivate func fetchProducts(_ category: String) {
+        self.dataHelper.fetchDataToRealm { [weak self] () in
 
-        self.dataHelper.fetchDataByCategory(category) { [weak self] (products) in
-            guard let products = products else {
-                return
-            }
-
-            if self?.cellViewModels[category] == nil {
-                self?.cellViewModels[category] = [ProductCellViewModel]()
-            }
-
-            for product in products {
-
-                let description = "\(product.packageSize!) \(product.packagePrice!)"
-
-                let cell = ProductCellViewModel(titleText: product.name,
-                                                brandText:product.brand ,
-                                                descText: description,
-                                                imageUrl: product.thumbnailUrl,
-                                                price: product.price,
-                                                pastPrice:product.wasPrice,
-                                                isLike:false)
-                self?.cellViewModels[category]?.append(cell)
-
-            }
+            self?.addToViewModel(category: category)
         }
     }
 
-    fileprivate func fetchAllProducts(_ tagNames: [CategoryName]) {
+    func addToViewModel(category: String) {
+        let predicate = NSPredicate(format: "category = %@", category)
+        guard let products = uiRealm?.objects(Product.self).filter(predicate) else {
+            return
+        }
 
-        for item in tagNames {
-            let category = item.rawValue
+        for product in products {
+            let description = "\(product.packageSize!) \(product.packagePrice!)"
 
-            self.dataHelper.fetchDataByCategory(category) { [weak self] (products) in
-                guard let products = products else {
-                    return
-                }
-
-                if self?.cellViewModels[category] == nil {
-                    self?.cellViewModels[category] = [ProductCellViewModel]()
-                }
-
-                for product in products {
-
-                    let description = "\(product.packageSize!) \(product.packagePrice!)"
-
-                    let cell = ProductCellViewModel(titleText: product.name,
-                                                    brandText:product.brand ,
-                                                    descText: description,
-                                                    imageUrl: product.thumbnailUrl,
-                                                    price: product.price,
-                                                    pastPrice:product.wasPrice,
-                                                    isLike:false)
-                    self?.cellViewModels[category]?.append(cell)
-                }
-            }
+            let cell = ProductCellViewModel(titleText: product.name,
+                                            brandText:product.brand ,
+                                            descText: description,
+                                            imageUrl: product.thumbnailUrl,
+                                            price: product.price,
+                                            pastPrice:product.wasPrice.value,
+                                            isLike:false)
+            self.cellViewModels.append(cell)
         }
     }
 }
