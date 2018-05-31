@@ -8,6 +8,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SlideMenuControllerSwift
 
 enum CategoryName: String {
     case hot = "Hot"
@@ -49,6 +50,11 @@ class HomeController: ButtonBarPagerTabStripViewController {
         super.didReceiveMemoryWarning()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNavigationBarItem()
+    }
+
     private func setupNavBarButtons() {
         let searchButton = UIBarButtonItem(barButtonSystemItem: .search,
                                            target: self, action: #selector(onSearch))
@@ -76,5 +82,24 @@ class HomeController: ButtonBarPagerTabStripViewController {
     // MARK: - Action
     @objc func onSearch() {
 
+    }
+}
+
+extension HomeController : SlideMenuControllerDelegate {
+
+    func leftWillOpen() {
+        print("SlideMenuControllerDelegate: leftWillOpen")
+    }
+
+    func leftDidOpen() {
+        print("SlideMenuControllerDelegate: leftDidOpen")
+    }
+
+    func leftWillClose() {
+        print("SlideMenuControllerDelegate: leftWillClose")
+    }
+
+    func leftDidClose() {
+        print("SlideMenuControllerDelegate: leftDidClose")
     }
 }

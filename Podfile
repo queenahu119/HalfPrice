@@ -13,4 +13,5 @@ target 'HalfPrice' do
   pod 'AlamofireImage', '~> 3.3'
   pod 'XLPagerTabStrip', '~> 8.0'
   pod 'RealmSwift'
+  pod 'SlideMenuControllerSwift'
 end

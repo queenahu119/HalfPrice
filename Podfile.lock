@@ -35,6 +35,7 @@ PODS:
   - Realm/Headers (3.3.1)
   - RealmSwift (3.3.1):
     - Realm (= 3.3.1)
+  - SlideMenuControllerSwift (4.0.0)
   - SnapKit (4.0.0)
   - XLPagerTabStrip (8.0.1)
 
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - RealmSwift
+  - SlideMenuControllerSwift
   - SnapKit (~> 4.0.0)
   - XLPagerTabStrip (~> 8.0)
 
@@ -61,6 +63,7 @@ SPEC REPOS:
     - nanopb
     - Realm
     - RealmSwift
+    - SlideMenuControllerSwift
     - SnapKit
     - XLPagerTabStrip
 
@@ -77,9 +80,10 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
   RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   XLPagerTabStrip: c908b17cbf42fcd2598ee1adfc49bae25444d88a
 
-PODFILE CHECKSUM: ea92c20de768f49fc4ebb0fbeb01cb2034476f02
+PODFILE CHECKSUM: d5f8591149fc7560df2e710684463fba65653cab
 
 COCOAPODS: 1.5.2

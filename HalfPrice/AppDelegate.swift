@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import RealmSwift
+import SlideMenuControllerSwift
 
 var uiRealm: Realm?
 
@@ -16,6 +17,25 @@ var uiRealm: Realm?
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+
+    fileprivate func createMenuView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "HomeController") as! HomeController
+        let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
+
+        let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
+        leftViewController.mainViewController = nvc
+
+        UINavigationBar.appearance().tintColor = UIColor(rgb: 0x689F38, a: 1)
+
+        let slideMenuController = SlideMenuController(mainViewController: nvc, leftMenuViewController: leftViewController)
+        slideMenuController.delegate = mainViewController
+
+        self.window?.backgroundColor = UIColor(red: 236.0, green: 238.0, blue: 241.0, alpha: 1.0)
+        self.window?.rootViewController = slideMenuController
+        self.window?.makeKeyAndVisible()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
         [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -28,6 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Init Failed: ", error)
         }
 
+        createMenuView()
         return true
     }
 

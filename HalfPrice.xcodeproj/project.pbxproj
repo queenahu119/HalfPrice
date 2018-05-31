@@ -18,6 +18,9 @@
 		9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402B208305D30015C3C8 /* DataHelper.swift */; };
 		9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */; };
 		9B9F1A8520A2C234007DD66E /* ProduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */; };
+		9BD8C7AF20BE8A6600251650 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */; };
+		9BD8C7B120BE905400251650 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7B020BE905400251650 /* FeedbackViewController.swift */; };
+		9BD8C7B320BE912300251650 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7B220BE912200251650 /* UIViewController.swift */; };
 		9BFF77CA20A01B99009B9AEC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF77C920A01B99009B9AEC /* HomeController.swift */; };
 		9BFF77CC20A01E80009B9AEC /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF77CB20A01E80009B9AEC /* CategoryController.swift */; };
 		9FB49CB5C2627AC9F56F7852 /* Pods_HalfPrice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E4B2F25ADF5DB844190051 /* Pods_HalfPrice.framework */; };
@@ -39,6 +42,9 @@
 		9B5B402B208305D30015C3C8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProduceCell.xib; sourceTree = "<group>"; };
+		9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		9BD8C7B020BE905400251650 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		9BD8C7B220BE912200251650 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		9BFF77C920A01B99009B9AEC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		9BFF77CB20A01E80009B9AEC /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
 		C555729F36DE4AD54ABAABBC /* Pods-HalfPrice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPrice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,7 +108,10 @@
 				9B1F17842084908300BF622B /* ProductCell.swift */,
 				9B5B402B208305D30015C3C8 /* DataHelper.swift */,
 				9B29240D20BCFC4400C6FD1C /* Product.swift */,
+				9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */,
+				9BD8C7B020BE905400251650 /* FeedbackViewController.swift */,
 				9B1F178620849DD800BF622B /* Common.swift */,
+				9BD8C7B220BE912200251650 /* UIViewController.swift */,
 				9B30C050206DF14500C49A8B /* Main.storyboard */,
 				9B30C053206DF14500C49A8B /* Assets.xcassets */,
 				9B30C055206DF14500C49A8B /* LaunchScreen.storyboard */,
@@ -205,6 +214,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -217,6 +227,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -268,10 +279,13 @@
 				9B1F178720849DD900BF622B /* Common.swift in Sources */,
 				9B2787E620A574D1000A3630 /* CategoryViewModel.swift in Sources */,
 				9B29240E20BCFC4400C6FD1C /* Product.swift in Sources */,
+				9BD8C7B320BE912300251650 /* UIViewController.swift in Sources */,
 				9BFF77CA20A01B99009B9AEC /* HomeController.swift in Sources */,
 				9BFF77CC20A01E80009B9AEC /* CategoryController.swift in Sources */,
+				9BD8C7AF20BE8A6600251650 /* LeftMenuViewController.swift in Sources */,
 				9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */,
 				9B1F17852084908300BF622B /* ProductCell.swift in Sources */,
+				9BD8C7B120BE905400251650 /* FeedbackViewController.swift in Sources */,
 				9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
