@@ -41,8 +41,8 @@ class HomeController: ButtonBarPagerTabStripViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 
         buttonBarView.selectedBar.backgroundColor = .orange
-        buttonBarView.backgroundColor = UIColor(red: 7/255, green: 185/255, blue: 155/255, alpha: 1)
-
+        buttonBarView.backgroundColor = Color.themeBackground
+        
         setupNavBarButtons()
     }
 
@@ -82,24 +82,5 @@ class HomeController: ButtonBarPagerTabStripViewController {
     // MARK: - Action
     @objc func onSearch() {
 
-    }
-}
-
-extension HomeController : SlideMenuControllerDelegate {
-
-    func leftWillOpen() {
-        print("SlideMenuControllerDelegate: leftWillOpen")
-    }
-
-    func leftDidOpen() {
-        print("SlideMenuControllerDelegate: leftDidOpen")
-    }
-
-    func leftWillClose() {
-        print("SlideMenuControllerDelegate: leftWillClose")
-    }
-
-    func leftDidClose() {
-        print("SlideMenuControllerDelegate: leftDidClose")
     }
 }

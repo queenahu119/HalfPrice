@@ -11,6 +11,10 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
+enum Color {
+    static let themeBackground = UIColor(red: 7/255, green: 185/255, blue: 155/255, alpha: 1)
+}
+
 extension UIImageView {
     func imageFromServerURL(urlString: String) {
 

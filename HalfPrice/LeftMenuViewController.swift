@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 enum LeftMenu: Int {
     case main = 0
@@ -18,6 +19,10 @@ enum LeftMenu: Int {
     case feedback
 }
 
+enum Size {
+    static let heightOfHeaderView = 160
+}
+
 protocol LeftMenuProtocol {
     func changeViewController(_ menu: LeftMenu)
 }
@@ -27,19 +32,29 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     @IBOutlet weak var tableView: UITableView!
     var menus = ["Main", "Coles", "Woolworths", "IGA", "Location", "Share", "Feedback"]
     var mainViewController: UIViewController!
-    var swiftViewController: UIViewController!
+    var feedbackViewController: UIViewController!
+
+    var headerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Color.themeBackground
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-        
-        self.tableView.separatorColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
+
+        self.view.addSubview(self.headerView)
+
+        self.tableView.separatorStyle = .none
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let swiftViewController = storyboard.instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
-        self.swiftViewController = UINavigationController(rootViewController: swiftViewController)
+        let feedbackViewController = storyboard.instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+        self.feedbackViewController = UINavigationController(rootViewController: feedbackViewController)
+
+        setupUI()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,12 +72,24 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         case .main:
             self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
         case .feedback:
-            self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
+            self.slideMenuController()?.changeMainViewController(self.feedbackViewController, close: true)
         default:
             break
         }
     }
 
+    func setupUI() {
+        self.tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp.top).offset(Size.heightOfHeaderView)
+            make.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+
+        self.headerView.snp.makeConstraints { (make) in
+            make.top.equalTo(view.snp.top)
+            make.left.right.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(Size.heightOfHeaderView)
+        }
+    }
 }
 
 extension LeftMenuViewController : UITableViewDelegate, UITableViewDataSource {
@@ -101,9 +128,8 @@ extension LeftMenuViewController : UITableViewDelegate, UITableViewDataSource {
             case .main, .feedback:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCellId", for: indexPath)
 
-                cell.backgroundColor = UIColor(rgb: 0xF1F8E9, a: 1)
                 cell.textLabel?.font = UIFont.italicSystemFont(ofSize: 18)
-                cell.textLabel?.textColor = UIColor(rgb: 0x9E9E9E, a: 1)
+                cell.textLabel?.textColor = UIColor.black
                 cell.textLabel?.text = menus[indexPath.row]
                 return cell
             default:

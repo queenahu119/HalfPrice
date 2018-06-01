@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
         leftViewController.mainViewController = nvc
 
-        UINavigationBar.appearance().tintColor = UIColor(rgb: 0x689F38, a: 1)
+        UINavigationBar.appearance().tintColor = Color.themeBackground
 
         let slideMenuController = SlideMenuController(mainViewController: nvc, leftMenuViewController: leftViewController)
         slideMenuController.delegate = mainViewController
