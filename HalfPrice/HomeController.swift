@@ -84,3 +84,10 @@ class HomeController: ButtonBarPagerTabStripViewController {
 
     }
 }
+
+extension HomeController : SlideMenuControllerDelegate {
+
+    func leftWillOpen() {
+        print("SlideMenuControllerDelegate: leftWillOpen")
+    }
+}

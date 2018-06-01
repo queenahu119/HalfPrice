@@ -12,6 +12,7 @@ import RealmSwift
 class CategoryViewModel: NSObject {
 
     let dataHelper : DataHelper
+    let realmManager = RealmManager()
 
     init(dataHelper: DataHelper = DataHelper()) {
         self.dataHelper = dataHelper
@@ -49,25 +50,21 @@ class CategoryViewModel: NSObject {
         }
 
         self.cellViewModels = [ProductCellViewModel]()
-        if let products = uiRealm?.objects(Product.self) {
-            if (products.isEmpty) {
-                fetchProducts(currentCategory)
-            }
-        }
 
-        addToViewModel(category: currentCategory)
+        if !realmManager.isUpdateToDate() {
+            fetchProducts(currentCategory)
+        }
     }
 
     fileprivate func fetchProducts(_ category: String) {
         self.dataHelper.fetchDataToRealm { [weak self] () in
-
-            self?.addToViewModel(category: category)
+            self?.addProductsToViewModel(category: category)
         }
     }
 
-    func addToViewModel(category: String) {
-        let predicate = NSPredicate(format: "category = %@", category)
-        guard let products = uiRealm?.objects(Product.self).filter(predicate) else {
+    func addProductsToViewModel(category: String) {
+
+        guard let products = realmManager.getProductObjects(category: category) else {
             return
         }
 

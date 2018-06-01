@@ -16,6 +16,9 @@
 		9B30C054206DF14500C49A8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C053206DF14500C49A8B /* Assets.xcassets */; };
 		9B30C057206DF14500C49A8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C055206DF14500C49A8B /* LaunchScreen.storyboard */; };
 		9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402B208305D30015C3C8 /* DataHelper.swift */; };
+		9B78B52220C1159A002F8873 /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78B52120C1159A002F8873 /* RealmMigration.swift */; };
+		9B78B52420C11792002F8873 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78B52320C11792002F8873 /* RealmManager.swift */; };
+		9B78B52620C12565002F8873 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78B52520C12565002F8873 /* Constants.swift */; };
 		9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */; };
 		9B9F1A8520A2C234007DD66E /* ProduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */; };
 		9BD8C7AF20BE8A6600251650 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */; };
@@ -40,6 +43,9 @@
 		9B30C056206DF14500C49A8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B30C058206DF14500C49A8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B5B402B208305D30015C3C8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		9B78B52120C1159A002F8873 /* RealmMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
+		9B78B52320C11792002F8873 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		9B78B52520C12565002F8873 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProduceCell.xib; sourceTree = "<group>"; };
 		9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
@@ -106,8 +112,7 @@
 				9B2787E520A574D1000A3630 /* CategoryViewModel.swift */,
 				9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */,
 				9B1F17842084908300BF622B /* ProductCell.swift */,
-				9B5B402B208305D30015C3C8 /* DataHelper.swift */,
-				9B29240D20BCFC4400C6FD1C /* Product.swift */,
+				9B78B52020C11562002F8873 /* Kernel */,
 				9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */,
 				9BD8C7B020BE905400251650 /* FeedbackViewController.swift */,
 				9B1F178620849DD800BF622B /* Common.swift */,
@@ -127,6 +132,18 @@
 			children = (
 			);
 			path = docs;
+			sourceTree = "<group>";
+		};
+		9B78B52020C11562002F8873 /* Kernel */ = {
+			isa = PBXGroup;
+			children = (
+				9B29240D20BCFC4400C6FD1C /* Product.swift */,
+				9B5B402B208305D30015C3C8 /* DataHelper.swift */,
+				9B78B52120C1159A002F8873 /* RealmMigration.swift */,
+				9B78B52320C11792002F8873 /* RealmManager.swift */,
+				9B78B52520C12565002F8873 /* Constants.swift */,
+			);
+			path = Kernel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,15 +293,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B78B52420C11792002F8873 /* RealmManager.swift in Sources */,
 				9B1F178720849DD900BF622B /* Common.swift in Sources */,
 				9B2787E620A574D1000A3630 /* CategoryViewModel.swift in Sources */,
 				9B29240E20BCFC4400C6FD1C /* Product.swift in Sources */,
 				9BD8C7B320BE912300251650 /* UIViewController.swift in Sources */,
 				9BFF77CA20A01B99009B9AEC /* HomeController.swift in Sources */,
 				9BFF77CC20A01E80009B9AEC /* CategoryController.swift in Sources */,
+				9B78B52220C1159A002F8873 /* RealmMigration.swift in Sources */,
 				9BD8C7AF20BE8A6600251650 /* LeftMenuViewController.swift in Sources */,
 				9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */,
 				9B1F17852084908300BF622B /* ProductCell.swift in Sources */,
+				9B78B52620C12565002F8873 /* Constants.swift in Sources */,
 				9BD8C7B120BE905400251650 /* FeedbackViewController.swift in Sources */,
 				9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */,
 			);

@@ -17,6 +17,8 @@ class DataHelper: NSObject {
     fileprivate var categorys: [String] = []
     fileprivate var _refHandle: DatabaseHandle?
 
+    let realmManager = RealmManager()
+
     func fetchDataByCategory(_ category: String, completion: @escaping (_ collection: [Product]?) -> Void) {
         reference = Database.database().reference()
 
@@ -35,9 +37,7 @@ class DataHelper: NSObject {
                 product.configure(jsonDictionary: value)
                 collection.append(product)
 
-                try! uiRealm?.write {
-                    uiRealm?.add(product)
-                }
+                self.realmManager.saveObjects(objs: product)
             }
 
             completion(collection)
@@ -55,19 +55,18 @@ class DataHelper: NSObject {
 
             let product = Product()
             product.configure(jsonDictionary: value)
+
             guard let id = product.id else {
                 return
             }
 
             let predicate = NSPredicate(format: "id = %@", id)
-            guard let products = uiRealm?.objects(Product.self).filter(predicate) else {
+            guard let products = self.realmManager.getProductObjects(predicate) else {
                 return
             }
 
             if (products.isEmpty) {
-                try! uiRealm?.write {
-                    uiRealm?.add(product)
-                }
+                self.realmManager.saveObjects(objs: product)
             }
 
             completion()

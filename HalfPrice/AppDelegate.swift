@@ -11,11 +11,10 @@ import Firebase
 import RealmSwift
 import SlideMenuControllerSwift
 
-var uiRealm: Realm?
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let realmMigration = RealmMigration()
     var window: UIWindow?
 
     fileprivate func createMenuView() {
@@ -42,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
-        do {
-            uiRealm = try Realm()
-        } catch let error as NSError {
-            print("Init Failed: ", error)
-        }
+        realmMigration.didApplicationLunch()
+
+        // Test: Add new value to database
+        let realmManager = RealmManager()
+        realmManager.deleteDatabase()
 
         createMenuView()
         return true
