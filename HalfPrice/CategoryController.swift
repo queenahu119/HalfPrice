@@ -17,15 +17,18 @@ class CategoryController: UICollectionViewController, UICollectionViewDelegateFl
         return CategoryViewModel()
     }()
 
+    var tagIndex = 0
+    var activityIndicator:UIActivityIndicatorView!
+
     var itemInfo = IndicatorInfo(title: "View")
 
-    init(layout: UICollectionViewLayout, itemInfo: IndicatorInfo) {
+    init(layout: UICollectionViewLayout, index: Int, itemInfo: IndicatorInfo) {
         self.itemInfo = itemInfo
+        self.tagIndex = index
         super.init(collectionViewLayout: layout)
     }
 
     required init?(coder aDecoder: NSCoder) {
-
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -37,6 +40,20 @@ class CategoryController: UICollectionViewController, UICollectionViewDelegateFl
 
         self.collectionView?.backgroundColor = UIColor.white
 
+        setupLoading()
+
+        viewModel.updateLoadingStatus = { [weak self] () in
+            DispatchQueue.main.async {
+                let isLoading = self?.viewModel.isLoading ?? false
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
+            }
+
+        }
+
         viewModel.reloadViewClosure = { [weak self] in
             self?.collectionView?.reloadData()
         }
@@ -45,7 +62,7 @@ class CategoryController: UICollectionViewController, UICollectionViewDelegateFl
             viewModel.currentCategory = title
         }
 
-        viewModel.initFetch()
+        viewModel.initFetch(tagIndex: tagIndex)
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,4 +104,10 @@ class CategoryController: UICollectionViewController, UICollectionViewDelegateFl
         return itemInfo
     }
 
+    private func setupLoading() {
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle:
+            UIActivityIndicatorViewStyle.gray)
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
+    }
 }

@@ -22,10 +22,17 @@ class CategoryViewModel: NSObject {
 
     // MARK: - callback
     var reloadViewClosure: (() -> Void)?
-
+    var updateLoadingStatus: (() -> Void)?
+    
     private var cellViewModels: [ProductCellViewModel] = [ProductCellViewModel]() {
         didSet {
             self.reloadViewClosure?()
+        }
+    }
+
+    var isLoading: Bool = false {
+        didSet {
+            self.updateLoadingStatus?()
         }
     }
 
@@ -44,7 +51,7 @@ class CategoryViewModel: NSObject {
         return cellViewModels[indexPath.row]
     }
 
-    func initFetch() {
+    func initFetch(tagIndex: Int) {
         guard let currentCategory = currentCategory else {
             return
         }
@@ -52,12 +59,19 @@ class CategoryViewModel: NSObject {
         self.cellViewModels = [ProductCellViewModel]()
 
         if !realmManager.isUpdateToDate() {
-            fetchProducts(currentCategory)
+            if (tagIndex == 0) {
+                fetchProducts(currentCategory)
+            } else {
+                self.addProductsToViewModel(category: currentCategory)
+            }
+
         }
     }
 
     fileprivate func fetchProducts(_ category: String) {
+        self.isLoading = true
         self.dataHelper.fetchDataToRealm { [weak self] () in
+            self?.isLoading = false
             self?.addProductsToViewModel(category: category)
         }
     }

@@ -28,7 +28,7 @@ enum CategoryName: String {
 
 class HomeController: ButtonBarPagerTabStripViewController {
 
-    static let tagNames: [CategoryName] = [.hot, .frozen, .drinks, .household, .beauty, .living, .international, .dairy, .bakery, .meat, .stationery, .pet, .alcohol]
+    var tagNames: [CategoryName] = [.hot, .frozen, .drinks, .household, .beauty, .living, .international, .dairy, .bakery, .meat, .stationery, .pet, .alcohol]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +63,7 @@ class HomeController: ButtonBarPagerTabStripViewController {
         navigationItem.rightBarButtonItems = [searchButton, bookmarksButton]
 
     }
+
     // MARK: - PagerTabStripDataSource
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
@@ -70,9 +71,9 @@ class HomeController: ButtonBarPagerTabStripViewController {
         let layout = UICollectionViewFlowLayout()
         var childViewControllers: [CategoryController]? = []
 
-        for item in HomeController.tagNames {
+        for item in tagNames {
             let title = IndicatorInfo(title: item.rawValue)
-            let child = CategoryController(layout: layout, itemInfo: title)
+            let child = CategoryController(layout: layout, index:item.hashValue, itemInfo: title)
             childViewControllers?.append(child)
         }
 

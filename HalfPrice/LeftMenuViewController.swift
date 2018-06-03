@@ -51,7 +51,7 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
         self.tableView.separatorStyle = .none
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let feedbackViewController = storyboard.instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+        let feedbackViewController = storyboard.instantiateViewController(withIdentifier: "FeedbackViewController")
         self.feedbackViewController = UINavigationController(rootViewController: feedbackViewController)
 
         setupUI()
