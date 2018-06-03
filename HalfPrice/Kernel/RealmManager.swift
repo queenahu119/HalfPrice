@@ -35,10 +35,18 @@ class RealmManager {
         })
     }
 
-    func saveObjects(objs: Object) {
+    func addObjects(objs: Object) {
         try? realm?.write ({
             // If update = false, adds the object
             realm?.add(objs, update: false)
+        })
+    }
+
+    func saveObjects(objs: Object) {
+        try? realm?.write ({
+            // If update = true, it can update the exist object by primaryKey,
+            // Or add the new one.
+            realm?.add(objs, update: true)
         })
     }
 
@@ -80,5 +88,10 @@ class RealmManager {
 
     func isUpdateToDate() -> Bool {
         return false
+    }
+
+    // MARK: - Category Object
+    func getObjects(type: Category.Type) -> Results<Category>? {
+        return realm?.objects(type)
     }
 }

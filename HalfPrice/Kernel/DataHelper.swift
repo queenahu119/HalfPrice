@@ -66,7 +66,11 @@ class DataHelper: NSObject {
             }
 
             if (products.isEmpty) {
-                self.realmManager.saveObjects(objs: product)
+                self.realmManager.addObjects(objs: product)
+
+                let category = Category()
+                category.name = product.category
+                self.realmManager.saveObjects(objs: category)
             }
 
             completion()

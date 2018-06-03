@@ -12,9 +12,8 @@ import RealmSwift
 import SlideMenuControllerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WelcomeViewControllerDelegate {
 
-    let realmMigration = RealmMigration()
     var window: UIWindow?
 
     fileprivate func createMenuView() {
@@ -41,13 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
-        realmMigration.didApplicationLunch()
-
         // Test: Add new value to database
         let realmManager = RealmManager()
         realmManager.deleteDatabase()
 
-        createMenuView()
+        setupWelcomeView()
         return true
     }
 
@@ -67,6 +64,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
 
+    }
+
+    func setupWelcomeView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let welcomeViewController: WelcomeViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+        welcomeViewController.delegate = self
+        self.window?.rootViewController = welcomeViewController
+    }
+
+    // MARK: - WelcomeViewControllerDelegate
+    func loadingViewCompletion() {
+        createMenuView()
     }
 
 }

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9B1F17852084908300BF622B /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F17842084908300BF622B /* ProductCell.swift */; };
 		9B1F178720849DD900BF622B /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1F178620849DD800BF622B /* Common.swift */; };
-		9B2787E620A574D1000A3630 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2787E520A574D1000A3630 /* CategoryViewModel.swift */; };
 		9B29240E20BCFC4400C6FD1C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B29240D20BCFC4400C6FD1C /* Product.swift */; };
 		9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B30C04C206DF14500C49A8B /* AppDelegate.swift */; };
 		9B30C052206DF14500C49A8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B30C050206DF14500C49A8B /* Main.storyboard */; };
@@ -21,6 +20,9 @@
 		9B78B52620C12565002F8873 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78B52520C12565002F8873 /* Constants.swift */; };
 		9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */; };
 		9B9F1A8520A2C234007DD66E /* ProduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */; };
+		9BC9FA8A20C3AACE00F65845 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA8920C3AACE00F65845 /* WelcomeViewController.swift */; };
+		9BC9FA8C20C3C0A300F65845 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA8B20C3C0A300F65845 /* Category.swift */; };
+		9BC9FA9020C3F78E00F65845 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA8F20C3F78E00F65845 /* CategoryViewModel.swift */; };
 		9BD8C7AF20BE8A6600251650 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */; };
 		9BD8C7B120BE905400251650 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7B020BE905400251650 /* FeedbackViewController.swift */; };
 		9BD8C7B320BE912300251650 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7B220BE912200251650 /* UIViewController.swift */; };
@@ -34,7 +36,6 @@
 		85087C9AF712F502FCF3DADE /* Pods-HalfPrice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HalfPrice.release.xcconfig"; path = "Pods/Target Support Files/Pods-HalfPrice/Pods-HalfPrice.release.xcconfig"; sourceTree = "<group>"; };
 		9B1F17842084908300BF622B /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		9B1F178620849DD800BF622B /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		9B2787E520A574D1000A3630 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		9B29240D20BCFC4400C6FD1C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9B30C049206DF14500C49A8B /* HalfPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalfPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B30C04C206DF14500C49A8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +49,9 @@
 		9B78B52520C12565002F8873 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProduceCell.xib; sourceTree = "<group>"; };
+		9BC9FA8920C3AACE00F65845 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		9BC9FA8B20C3C0A300F65845 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9BC9FA8F20C3F78E00F65845 /* CategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		9BD8C7B020BE905400251650 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		9BD8C7B220BE912200251650 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -109,12 +113,13 @@
 				9B30C04C206DF14500C49A8B /* AppDelegate.swift */,
 				9BFF77C920A01B99009B9AEC /* HomeController.swift */,
 				9BFF77CB20A01E80009B9AEC /* CategoryController.swift */,
-				9B2787E520A574D1000A3630 /* CategoryViewModel.swift */,
+				9BC9FA8F20C3F78E00F65845 /* CategoryViewModel.swift */,
 				9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */,
 				9B1F17842084908300BF622B /* ProductCell.swift */,
 				9B78B52020C11562002F8873 /* Kernel */,
 				9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */,
 				9BD8C7B020BE905400251650 /* FeedbackViewController.swift */,
+				9BC9FA8920C3AACE00F65845 /* WelcomeViewController.swift */,
 				9B1F178620849DD800BF622B /* Common.swift */,
 				9BD8C7B220BE912200251650 /* UIViewController.swift */,
 				9B30C050206DF14500C49A8B /* Main.storyboard */,
@@ -138,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				9B29240D20BCFC4400C6FD1C /* Product.swift */,
+				9BC9FA8B20C3C0A300F65845 /* Category.swift */,
 				9B5B402B208305D30015C3C8 /* DataHelper.swift */,
 				9B78B52120C1159A002F8873 /* RealmMigration.swift */,
 				9B78B52320C11792002F8873 /* RealmManager.swift */,
@@ -295,15 +301,17 @@
 			files = (
 				9B78B52420C11792002F8873 /* RealmManager.swift in Sources */,
 				9B1F178720849DD900BF622B /* Common.swift in Sources */,
-				9B2787E620A574D1000A3630 /* CategoryViewModel.swift in Sources */,
+				9BC9FA8A20C3AACE00F65845 /* WelcomeViewController.swift in Sources */,
 				9B29240E20BCFC4400C6FD1C /* Product.swift in Sources */,
 				9BD8C7B320BE912300251650 /* UIViewController.swift in Sources */,
 				9BFF77CA20A01B99009B9AEC /* HomeController.swift in Sources */,
+				9BC9FA8C20C3C0A300F65845 /* Category.swift in Sources */,
 				9BFF77CC20A01E80009B9AEC /* CategoryController.swift in Sources */,
 				9B78B52220C1159A002F8873 /* RealmMigration.swift in Sources */,
 				9BD8C7AF20BE8A6600251650 /* LeftMenuViewController.swift in Sources */,
 				9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */,
 				9B1F17852084908300BF622B /* ProductCell.swift in Sources */,
+				9BC9FA9020C3F78E00F65845 /* CategoryViewModel.swift in Sources */,
 				9B78B52620C12565002F8873 /* Constants.swift in Sources */,
 				9BD8C7B120BE905400251650 /* FeedbackViewController.swift in Sources */,
 				9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */,
