@@ -61,11 +61,9 @@ class DataHelper: NSObject {
             }
 
             let predicate = NSPredicate(format: "id = %@", id)
-            guard let products = self.realmManager.getProductObjects(predicate) else {
-                return
-            }
+            let products = self.realmManager.getProductObjects(predicate)
 
-            if (products.isEmpty) {
+            if (products == nil) {
                 self.realmManager.addObjects(objs: product)
 
                 let category = Category()
@@ -75,5 +73,19 @@ class DataHelper: NSObject {
 
             completion()
         })
+    }
+
+    func getDataByMarkets(_ category: String, markets: [String?]) -> [Product?] {
+        var results: [Product?] = []
+
+        for item in markets {
+            if let item = item {
+
+                if let objects = self.realmManager.getProductObjects(category: category, source: item) {
+                    results.append(contentsOf: objects)
+                }
+            }
+        }
+        return results
     }
 }

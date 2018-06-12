@@ -19,8 +19,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.blue
-
         let realmMigration = RealmMigration()
         realmMigration.didApplicationLunch()
 

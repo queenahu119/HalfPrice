@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import  RealmSwift
+import RealmSwift
 
 class RealmManager {
     let realm = globalRealm
@@ -56,20 +56,31 @@ class RealmManager {
         })
     }
 
-    // Returs an array as Results<object>?
-    func getObjects(type: Product.Type) -> Results<Product>? {
-        return realm?.objects(type)
+    func getObjects() -> [Product]? {
+        guard let objects = realm?.objects(Product.self).toArray(ofType: Product.self) else {
+            return nil
+        }
+        return objects.isEmpty ? nil : objects
     }
 
-    func getProductObjects(category: String?) -> Results<Product>? {
-        let predicate = NSPredicate(format: "category = %@", category ?? "")
-        let products = realm?.objects(Product.self).filter(predicate)
-        return products
+    func getProductObjects(category: String, source: String?) -> [Product]? {
+        var predicate = NSPredicate(format: "category = %@", category)
+
+        if let source = source {
+            predicate = NSPredicate(format: "source = %@ && category = %@", source, category)
+        }
+
+        guard let objects = realm?.objects(Product.self).filter(predicate).toArray(ofType: Product.self) else {
+            return nil
+        }
+        return objects.isEmpty ? nil : objects
     }
 
-    func getProductObjects(_ predicate: NSPredicate) -> Results<Product>? {
-        let products = realm?.objects(Product.self).filter(predicate)
-        return products
+    func getProductObjects(_ predicate: NSPredicate) -> [Product]? {
+        guard let objects = realm?.objects(Product.self).filter(predicate).toArray(ofType: Product.self) else {
+            return nil
+        }
+        return objects.isEmpty ? nil : objects
     }
 
     func isEmpty() -> Bool {
@@ -91,7 +102,7 @@ class RealmManager {
     }
 
     // MARK: - Category Object
-    func getObjects(type: Category.Type) -> Results<Category>? {
-        return realm?.objects(type)
+    func getCategoryObjects() -> Results<Category>? {
+        return realm?.objects(Category.self)
     }
 }

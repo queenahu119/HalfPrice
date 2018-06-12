@@ -78,7 +78,7 @@ class CategoryViewModel: NSObject {
 
     func addProductsToViewModel(category: String) {
 
-        guard let products = realmManager.getProductObjects(category: category) else {
+        guard let products = realmManager.getProductObjects(category: category, source: nil) else {
             return
         }
 

@@ -23,6 +23,7 @@
 		9BC9FA8A20C3AACE00F65845 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA8920C3AACE00F65845 /* WelcomeViewController.swift */; };
 		9BC9FA8C20C3C0A300F65845 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA8B20C3C0A300F65845 /* Category.swift */; };
 		9BC9FA9020C3F78E00F65845 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA8F20C3F78E00F65845 /* CategoryViewModel.swift */; };
+		9BC9FA9220C426F900F65845 /* ExtensionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA9120C426F900F65845 /* ExtensionRealm.swift */; };
 		9BD8C7AF20BE8A6600251650 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */; };
 		9BD8C7B120BE905400251650 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7B020BE905400251650 /* FeedbackViewController.swift */; };
 		9BD8C7B320BE912300251650 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD8C7B220BE912200251650 /* UIViewController.swift */; };
@@ -52,6 +53,7 @@
 		9BC9FA8920C3AACE00F65845 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		9BC9FA8B20C3C0A300F65845 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9BC9FA8F20C3F78E00F65845 /* CategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		9BC9FA9120C426F900F65845 /* ExtensionRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionRealm.swift; sourceTree = "<group>"; };
 		9BD8C7AE20BE8A6600251650 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		9BD8C7B020BE905400251650 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		9BD8C7B220BE912200251650 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				9B5B402B208305D30015C3C8 /* DataHelper.swift */,
 				9B78B52120C1159A002F8873 /* RealmMigration.swift */,
 				9B78B52320C11792002F8873 /* RealmManager.swift */,
+				9BC9FA9120C426F900F65845 /* ExtensionRealm.swift */,
 				9B78B52520C12565002F8873 /* Constants.swift */,
 			);
 			path = Kernel;
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B78B52420C11792002F8873 /* RealmManager.swift in Sources */,
+				9BC9FA9220C426F900F65845 /* ExtensionRealm.swift in Sources */,
 				9B1F178720849DD900BF622B /* Common.swift in Sources */,
 				9BC9FA8A20C3AACE00F65845 /* WelcomeViewController.swift in Sources */,
 				9B29240E20BCFC4400C6FD1C /* Product.swift in Sources */,
