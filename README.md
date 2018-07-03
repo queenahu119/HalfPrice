@@ -9,6 +9,11 @@ Supermarket's special price by Firebase and realm.
 * Auto layout programmatically
 
 
+### Screenshots
+
+<img src="https://github.com/queenahu119/HalfPrice/blob/master/video.gif" width="250">
+
+
 
 ## Getting Started
 
