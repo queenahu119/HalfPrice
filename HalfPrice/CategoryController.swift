@@ -82,7 +82,7 @@ class CategoryController: UICollectionViewController, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let frame = collectionView.safeAreaLayoutGuide.layoutFrame
-        return CGSize(width: frame.size.width, height: 180)
+        return CGSize(width: frame.size.width, height: 140)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

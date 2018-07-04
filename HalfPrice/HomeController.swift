@@ -24,11 +24,12 @@ enum CategoryName: String {
     case stationery = "Stationery"
     case pet = "Pet"
     case alcohol = "Alcohol"
+    case pantry = "Pantry"
 }
 
 class HomeController: ButtonBarPagerTabStripViewController {
 
-    var tagNames: [CategoryName] = [.hot, .frozen, .drinks, .household, .beauty, .living, .international, .dairy, .bakery, .meat, .stationery, .pet, .alcohol]
+    var tagNames: [CategoryName] = [.pantry, .frozen, .drinks, .household, .pet]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,9 +72,9 @@ class HomeController: ButtonBarPagerTabStripViewController {
         let layout = UICollectionViewFlowLayout()
         var childViewControllers: [CategoryController]? = []
 
-        for item in tagNames {
+        for (index, item) in tagNames.enumerated() {
             let title = IndicatorInfo(title: item.rawValue)
-            let child = CategoryController(layout: layout, index:item.hashValue, itemInfo: title)
+            let child = CategoryController(layout: layout, index: index, itemInfo: title)
             childViewControllers?.append(child)
         }
 
