@@ -44,7 +44,7 @@ class DataHelper: NSObject {
         })
     }
 
-    func fetchDataToRealm(completion: @escaping () -> Void) {
+    func fetchDataToRealm(completion: @escaping (_ collection: [Product]?) -> Void) {
         reference = Database.database().reference()
 
         _refHandle = self.reference.observe(.childAdded, with: { (snapshot) in
@@ -53,6 +53,7 @@ class DataHelper: NSObject {
                 return
             }
 
+            var collection: [Product] = []
             let product = Product()
             product.configure(jsonDictionary: value)
 
@@ -65,13 +66,11 @@ class DataHelper: NSObject {
 
             if (products == nil) {
                 self.realmManager.addObjects(objs: product)
-
-                let category = Category()
-                category.name = product.category
-                self.realmManager.saveObjects(objs: category)
             }
 
-            completion()
+            // Add all
+            collection.append(product)
+            completion(collection)
         })
     }
 

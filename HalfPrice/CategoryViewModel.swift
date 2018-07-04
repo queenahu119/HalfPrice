@@ -62,23 +62,37 @@ class CategoryViewModel: NSObject {
             if (tagIndex == 0) {
                 fetchProducts(currentCategory)
             } else {
-                self.addProductsToViewModel(category: currentCategory)
-            }
+                // Offline
+                guard let products = realmManager.getProductObjects(category: currentCategory, source: nil) else {
+                    return
+                }
 
+                self.addProductsToViewModel(products: products)
+            }
         }
     }
 
     fileprivate func fetchProducts(_ category: String) {
         self.isLoading = true
-        self.dataHelper.fetchDataToRealm { [weak self] () in
+        self.dataHelper.fetchDataToRealm { [weak self] (products) in
             self?.isLoading = false
-            self?.addProductsToViewModel(category: category)
+            guard let products = products else {
+                return
+            }
+
+            if self?.cellViewModels == nil {
+                self?.cellViewModels = [ProductCellViewModel]()
+            }
+
+            let results = products.filter({ (product) -> Bool in
+                (product.keyInCategoryList?.contains(category.lowercased()))!
+            })
+            self?.addProductsToViewModel(products: results)
         }
     }
 
-    func addProductsToViewModel(category: String) {
-
-        guard let products = realmManager.getProductObjects(category: category, source: nil) else {
+    func addProductsToViewModel(products: [Product]?) {
+        guard let products = products else {
             return
         }
 

@@ -64,10 +64,10 @@ class RealmManager {
     }
 
     func getProductObjects(category: String, source: String?) -> [Product]? {
-        var predicate = NSPredicate(format: "category = %@", category)
+        var predicate = NSPredicate(format: "keyInCategoryList CONTAINS %@", category.lowercased())
 
         if let source = source {
-            predicate = NSPredicate(format: "source = %@ && category = %@", source, category)
+            predicate = NSPredicate(format: "source = %@ && keyInCategoryList CONTAINS %@", source, category.lowercased())
         }
 
         guard let objects = realm?.objects(Product.self).filter(predicate).toArray(ofType: Product.self) else {
