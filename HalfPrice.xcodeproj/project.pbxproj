@@ -17,7 +17,6 @@
 		9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5B402B208305D30015C3C8 /* DataHelper.swift */; };
 		9B78B52220C1159A002F8873 /* RealmMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78B52120C1159A002F8873 /* RealmMigration.swift */; };
 		9B78B52420C11792002F8873 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78B52320C11792002F8873 /* RealmManager.swift */; };
-		9B78B52620C12565002F8873 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78B52520C12565002F8873 /* Constants.swift */; };
 		9B924CD7206E11FA005FD896 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */; };
 		9B9F1A8520A2C234007DD66E /* ProduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */; };
 		9BC9FA8A20C3AACE00F65845 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC9FA8920C3AACE00F65845 /* WelcomeViewController.swift */; };
@@ -47,7 +46,6 @@
 		9B5B402B208305D30015C3C8 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		9B78B52120C1159A002F8873 /* RealmMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMigration.swift; sourceTree = "<group>"; };
 		9B78B52320C11792002F8873 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		9B78B52520C12565002F8873 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9B924CD6206E11FA005FD896 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B9F1A8220A2BBB8007DD66E /* ProduceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProduceCell.xib; sourceTree = "<group>"; };
 		9BC9FA8920C3AACE00F65845 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				9B78B52120C1159A002F8873 /* RealmMigration.swift */,
 				9B78B52320C11792002F8873 /* RealmManager.swift */,
 				9BC9FA9120C426F900F65845 /* ExtensionRealm.swift */,
-				9B78B52520C12565002F8873 /* Constants.swift */,
 			);
 			path = Kernel;
 			sourceTree = "<group>";
@@ -316,7 +313,6 @@
 				9B30C04D206DF14500C49A8B /* AppDelegate.swift in Sources */,
 				9B1F17852084908300BF622B /* ProductCell.swift in Sources */,
 				9BC9FA9020C3F78E00F65845 /* CategoryViewModel.swift in Sources */,
-				9B78B52620C12565002F8873 /* Constants.swift in Sources */,
 				9BD8C7B120BE905400251650 /* FeedbackViewController.swift in Sources */,
 				9B5B402C208305D30015C3C8 /* DataHelper.swift in Sources */,
 			);
